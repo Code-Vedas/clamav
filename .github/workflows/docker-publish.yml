@@ -68,6 +68,12 @@ jobs:
           DOCKER_METADATA_ANNOTATIONS_LEVELS: manifest,index
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          labels: |
+            org.opencontainers.image.title=ClamAV
+            org.opencontainers.image.source=https://github.com/Cisco-Talos/clamav
+          annotations: |
+            org.opencontainers.image.description=ClamAV antivirus engine built from source with freshclam and clamd
+            org.opencontainers.image.licenses=GPL-2.0-only
 
       # Build and push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
