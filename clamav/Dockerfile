@@ -1,7 +1,7 @@
 # =========================
 # Builder stage
 # =========================
-FROM debian:12-slim AS builder
+FROM debian:13-slim AS builder
 
 ARG CLAMAV_VERSION=1.4.1
 
@@ -42,7 +42,7 @@ RUN curl -L "https://www.clamav.net/downloads/production/clamav-${CLAMAV_VERSION
 # =========================
 # Runtime stage
 # =========================
-FROM debian:12-slim
+FROM debian:13-slim
 
 ENV DEBIAN_FRONTEND=noninteractive
 
